@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pizza Delivery</title>
+        <link rel="stylesheet" type="text/css" href="delivery.css">
+    </head>
+
+    <body>
+        <form id="pizza-form">
+            <fieldset class="delivery">
+
+                <legend class="box set">🍕 Pizza Delivery Service 🍕</legend>
+
+                <!-- customer name -->
+                <div class="for-box">
+                    <label class="box" for=name>Name:</label>
+                    <input type="text" name="name" id="name" required>
+                </div>
+
+                <!-- email -->
+                <div class="for-box">
+                    <label class="box" for="email">Email:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+
+                <!-- address -->
+                <div class="for-box">
+                    <label class="box" for="address">Address:</label>
+                    <input type="text" name="address" id="address" required>
+                </div>
+
+                <!-- phone number -->
+                <div class="for-box">
+                    <label class="box" for="phone">Phone Number:</label>
+                    <input type="tel" name="phone" id="phone" required pattern="(09)[0-9]{2}[-\s]?[0-9]{3}[-\s]?[0-9]{4}|[(](09)[0-9]{2}[)][\s][0-9]{3}[\s][0-9]{4}|[(]?(049)[)]?[\s][0-9]{3}[\s][0-9]{4}|[0-9]{3}[-\s][0-9]{4}">
+                    
+                    
+                </div>
+                
+
+                 <!-- delivery time -->
+                <div class="for-box"> 
+                    <label class="box" for="time">Delivery time:</label>
+                    <input type="time" id="time" name="time" min="10:00:00" max="19:00:00">
+                </div>
+
+                <!-- pizza size -->
+                <div class="for-box">
+                    <span class="box" id="size">Pizza Size: </span><br> 
+                    
+                    <input class="choice" type="radio" name="size" id="small" value="small-size" required>
+                    <label class="choice" for="small">Small (Php 125)</label><br>
+    
+                    <input class="choice" type="radio" name="size" id="medium" value="medium-size" required>
+                    <label class="choice" for="medium">Medium (Php 250)</label><br>
+    
+                    <input class="choice" type="radio" name="size" id="large" value="large-size" required checked>
+                    <label class="choice" for="large">Large (Php 500)</label>
+                </div>
+
+                <!-- pizza crust -->
+                <div class="for-box">
+                    <span class="box" id="pizza-crust">Pizza Crust Type: </span><br> 
+
+                    <input class="choice" type="radio" name="type" id="thin" value="thin-crust" required>
+                    <label class="choice" for="thin">Thin Crust (Php 50)</label><br>
+
+                    <input class="choice" type="radio" name="type" id="thick" value="thick-crust" required checked>
+                    <label class="choice" for="thick">Thick Crust (Php 70)</label>
+                </div>
+
+                <!-- pizza main toppings -->
+                <div class="for-box">
+                    <label class="box" for="topping">Pizza Main Toppings:</label>
+                    <select name="toppings" id=topping-list>
+                      <option value="pep-overload" selected="selected">Pepperoni Overload (Php 100)</option>
+                      <option value="hawaiian" >Hawaiian (Php 50)</option>
+                      <option value="meat-overload">Meat Overload (Php 125)</option>
+                    </select>
+                </div>
+                
+
+                <!-- additional toppings -->
+                <div class="for-box">
+                    <span class="box">Additional Toppings:</span><br>
+                    <input class="choice" type="checkbox" name="toppings" value="vegetables " id="vegetables">
+                    <label class="choice" for="vegetables">More Vegetables (Php 12)</label><br>
+    
+                    <input class="choice" type="checkbox" name="toppings" value="meat" id="meat" checked>
+                    <label class="choice" for="meat">More Meat (Php 75)</label><br>
+    
+                    <input class="choice" type="checkbox" name="toppings" value="cheese" id="cheese" checked>
+                    <label class="choice" for="cheese">More Cheese (Php 50)</label>
+                </div>
+
+                <!-- additional request -->
+                <div class="for-box request">
+                    <label class="box" for="additional-request">Additional Request:</label><br>
+                    <textarea class="choice" rows="6" cols="35" id="additional-request"></textarea>
+                </div>
+
+                <br>
+                
+                <div>
+                    <table style="width: 100%;">
+                        <tr class="odd-row">
+                            <th></th>
+                            <th>Pizza Size</th>
+                            <th>Crust Type</th>
+                            <th>Main Toppings</th>
+                            <th>Additional Topppings</th>
+                            <th>Total Without Tax</th>
+                            <th>Total With Tax</th>
+                        </tr>
+
+                        <tr class="even-row">
+                            <td>Price</td>
+                            <td id="pizza-size">500</td>
+                            <td id="crust-type">70</td>
+                            <td id="main-toppings">100</td>
+                            <td id="additional-toppings">125</td>
+                            <td id="total-no-tax">795</td>
+                            <td id="total-w-tax">890.4</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+
+                <button class="btn" type="submit">Submit</button>
+                <button class="btn" type="reset">Reset</button>
+
+            </fieldset>
+            
+            <script src="delivery.js"></script>
+            
+        </form>
+    </body>
+</html>
